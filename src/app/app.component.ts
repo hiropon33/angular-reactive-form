@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-reactive-form';
+  myForm: FormGroup;
+
+  constructor(fb: FormBuilder) {
+    this.myForm = fb.group({
+      textForm: ["", Validators.required],
+      checkboxForm: ["", Validators.requiredTrue],
+      gender: ["", Validators.required]
+    });
+  }
+  onSubmit(value: string): void {
+    console.log('送信された値：', value);
+  }
 }
