@@ -11,9 +11,9 @@ export class AppComponent {
 
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({
-      textForm: ["", Validators.required],
-      checkboxForm: ["", Validators.requiredTrue],
-      gender: ["", Validators.required]
+      textForm: ['', Validators.required],
+      checkboxForm: ['', Validators.requiredTrue],
+      gender: ['', Validators.required]
     });
   }
   onSubmit(value: string): void {
